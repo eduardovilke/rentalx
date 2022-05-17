@@ -4,5 +4,6 @@
   "host": "localhost",
   "username": "docker",
   "password": "ignite",
-  "database": "rentalx"
+  "database": "rentalx",
+  "entities": ["./src/modules/**/entities/*.ts"]
 }
