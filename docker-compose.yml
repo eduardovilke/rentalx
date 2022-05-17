@@ -9,3 +9,24 @@ services:
     volumes: 
       - .:/usr/app
     command: yarn dev
+    links:
+      - db
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    container_name: db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=ignite
+      - POSTGRES_DB=rentalx
+    volumes:
+      - pgdata:/data/postgres
+
+volumes:
+  pgdata:
+    driver: local
