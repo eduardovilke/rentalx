@@ -14,7 +14,7 @@ const create = async () => {
     VALUES ('${id}', 'admin', 'admin@rentalx.com.br', '${password}', true, 'now()', 'XXXXXX')`
   );
 
-  await connection.close;
+  await connection.close();
 };
 
 create().then(() => {
